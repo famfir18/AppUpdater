@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         new AppUpdater(this)
                 .setUpdateFrom(UpdateFrom.GOOGLE_PLAY)
                 .setUpdateFrom(UpdateFrom.JSON)
+                .setUpdateJSON("https://github.com/famfir18/AppUpdater/blob/master/app/update.json")
                 .setDisplay(Display.DIALOG)
                 .setTitleOnUpdateAvailable("Update available")
                 .setContentOnUpdateAvailable("Update aplikasi untuk menggunakan aplikasi")
