@@ -14,17 +14,30 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        new AppUpdater(this)
+/*        new AppUpdater(this)
                 .setUpdateFrom(UpdateFrom.GOOGLE_PLAY)
-                .setUpdateFrom(UpdateFrom.GITHUB)
-                .setGitHubUserAndRepo("famfir18", "AppUpdater")
-                .setUpdateFrom(UpdateFrom.JSON)
-                .setUpdateJSON("https://github.com/famfir18/AppUpdater/blob/master/app/update.json")
+                .setUpdateJSON("https://raw.githubusercontent.com/famfir18/UpdaterJson/master/update.json")
+//                .setUpdateFrom(UpdateFrom.GITHUB)
+//                .setGitHubUserAndRepo("famfir18", "AppUpdater")
+//                .setUpdateFrom(UpdateFrom.JSON)
+//                .setUpdateJSON("https://github.com/famfir18/AppUpdater/blob/master/app/update.json")
                 .setDisplay(Display.DIALOG)
                 .setTitleOnUpdateAvailable("Update available")
                 .setContentOnUpdateAvailable("Update aplikasi untuk menggunakan aplikasi")
                 .setButtonUpdate("Update")
                 .setCancelable(false)
+                .setButtonDismiss(null)
+                .setButtonDoNotShowAgain(null)
+                .start();*/
+
+        new AppUpdater(this)
+                .setUpdateFrom(UpdateFrom.GOOGLE_PLAY)
+                .setUpdateJSON("https://raw.githubusercontent.com/famfir18/UpdaterJson/master/update.json")
+                .setButtonDoNotShowAgain(null)
+                .setButtonDismiss(null)
+                .setCancelable(true)
+                .showAppUpdated(true)
+                .setDisplay(Display.DIALOG)
                 .start();
     }
 }
